@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>choose address</h1>
-    <input type="text" v-model="newAddress" placeholder="please input your adsdress">
-    <br>
-    <button @click="jumpIndex">confirm</button>
+    <div class="choose">子路由</div>
+      <transition name="fade">
+    <router-view></router-view>
+      </transition>
   </div>
 </template>
 
@@ -11,19 +11,9 @@
 export default {
   data: function(){
     return {
-      newAddress:""
+      a:"默认地址"
     }
   },
-  methods: {
-    jumpIndex() {
-      this.$router.push({
-        name: 'index',
-        params: {
-          newAddress: this.newAddress
-        }
-     })
-    }
-  }
 }
 </script>
 
@@ -36,11 +26,20 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+.choose {
+  color: blueviolet;
+}
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 10px
 }
 a {
   color: #42b983;
+}
+.fade-enter-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave{
+  opacity: 0;
 }
 </style>

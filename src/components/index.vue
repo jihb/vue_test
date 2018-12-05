@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <router-link to="/address">choose address</router-link>
+    <router-link to="/address/empty">choose address</router-link>
     <div> {{msg}} </div>
     <router-link to="/study1">study step1</router-link>
     <br>
@@ -15,12 +15,14 @@ export default {
       msg: ""
     };
   },
+  /*
   beforeMount: function() {
     let routerParams = this.$route.params.newAddress;
     if (routerParams) {
       this.msg = routerParams;
     }
   }
+  */
 };
 </script>
 
