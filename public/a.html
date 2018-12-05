@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>vue_test</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+</body>
+<script>
+    //需要监听的数据对象
+    var _test = '';
+    Object.defineProperty(window, 'test', {
+        set(val) {
+            //更新dom里的数据或是模版数据
+            document.getElementById('app').innerHTML=val;
+            return this._test = val;
+        }
+    });
+</Script>
+
+</html>
